@@ -1,0 +1,3 @@
+rootProject.name = 'later'
+
+include 'later-core', 'later-web'
