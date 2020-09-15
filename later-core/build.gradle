@@ -1,14 +1,14 @@
-plugins {
-    id 'java'
+// CORE 프로젝트는 배포되는 단위가 아니므로 Boot 플러그인을 통한 실행가능한 JAR는 만들지 않는다.
+bootJar {
+    enabled = false
 }
 
-group 'com.dasolute'
-version '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+// 하지만 다른 프로젝트의 하위프로젝트로 속해야 하므로 라이브러리 형태의 JAR파일로 생성한다.
+jar {
+    enabled = true
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtime('com.h2database:h2')
 }

@@ -35,3 +35,6 @@ out/
 
 
 ### gradle ###
+
+### vue ###
+node_modules
